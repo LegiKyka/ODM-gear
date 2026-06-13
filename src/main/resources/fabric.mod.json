@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "complicated_odm",
+  "version": "${version}",
+  "name": "Complicated ODM Gear",
+  "description": "A mod that adds fun-to-use ODM gear to minecraft fabric",
+  "authors": [
+    "LegiKyka"
+  ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/complicated_odm/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.kyka.complicated_odm.client.Complicated_odmDataGenerator"
+    ],
+    "client": [
+      "net.kyka.complicated_odm.client.Complicated_odmClient"
+    ],
+    "main": [
+      "net.kyka.complicated_odm.Complicated_odm"
+    ]
+  },
+  "mixins": [
+    "complicated_odm.mixins.json",
+    {
+      "config": "complicated_odm.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
