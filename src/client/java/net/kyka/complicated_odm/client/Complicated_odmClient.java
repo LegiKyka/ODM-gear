@@ -6,5 +6,6 @@ public class Complicated_odmClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        // Nothing needed here for now
     }
 }

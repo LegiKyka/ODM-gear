@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "complicated_odm:item/gas_tank",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

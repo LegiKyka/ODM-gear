@@ -21,7 +21,7 @@ public class ModItems {
     }
 
     public static final Item GAS_TANK = register("gas_tank", GasTankItem::new,
-            new Item.Settings().maxCount(1));
+            new Item.Settings().maxCount(1).maxDamage(1000));
 
     public static void registerItems() {
         Complicated_odm.LOGGER.info("Registering items for " + Complicated_odm.MOD_ID);

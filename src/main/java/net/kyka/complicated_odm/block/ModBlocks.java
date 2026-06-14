@@ -31,7 +31,7 @@ public class ModBlocks {
     }
 
     public static final Block GAS_PUMP = register("gas_pump", GasPumpBlock::new,
-            AbstractBlock.Settings.create().strength(2.0f).requiresTool(), true);
+            AbstractBlock.Settings.create().strength(2.0f).requiresTool().nonOpaque(), true);
 
     public static void registerBlocks() {
         Complicated_odm.LOGGER.info("Registering blocks for " + Complicated_odm.MOD_ID);
