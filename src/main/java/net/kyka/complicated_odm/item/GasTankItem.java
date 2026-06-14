@@ -32,12 +32,17 @@ public class GasTankItem extends Item implements GeoItem {
         return cache;
     }
 
+    // Gas is stored INVERTED from damage:
+    // Full tank  = damage 0    = MAX_GAS gas
+    // Empty tank = damage 1000 = 0 gas
+    // Fresh item starts at damage 1000 (empty) via default damage component
     public static int getGas(ItemStack stack) {
-        return stack.getDamage();
+        return MAX_GAS - stack.getDamage();
     }
 
     public static void setGas(ItemStack stack, int amount) {
-        stack.setDamage(Math.max(0, Math.min(MAX_GAS, amount)));
+        int clamped = Math.max(0, Math.min(MAX_GAS, amount));
+        stack.setDamage(MAX_GAS - clamped);
     }
 
     public static boolean isEmpty(ItemStack stack) {
@@ -52,6 +57,23 @@ public class GasTankItem extends Item implements GeoItem {
         int gas = getGas(stack);
         tooltip.add(Text.literal("Gas: " + gas + "/" + MAX_GAS).formatted(Formatting.GRAY));
     }
+
+    // Hide bar when empty (no gas to show), show when has gas
+    @Override
+    public boolean isItemBarVisible(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public int getItemBarStep(ItemStack stack) {
+        return Math.round(((float) getGas(stack) / MAX_GAS) * 13);
+    }
+
+    @Override
+    public int getItemBarColor(ItemStack stack) {
+        return 0x00AAFF; // Light blue for gas
+    }
+
     @Override
     public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
         consumer.accept(new GeoRenderProvider() {

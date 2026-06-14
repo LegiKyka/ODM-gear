@@ -1,0 +1,26 @@
+{
+  "gas_hiss": {
+    "sounds": [
+      {
+        "name": "complicated_odm:block/gas_hiss",
+        "stream": false
+      }
+    ]
+  },
+  "filled": {
+    "sounds": [
+      {
+        "name": "complicated_odm:block/filled",
+        "stream": false
+      }
+    ]
+  },
+  "boom": {
+    "sounds": [
+      {
+        "name": "complicated_odm:block/boom",
+        "stream": false
+      }
+    ]
+  }
+}

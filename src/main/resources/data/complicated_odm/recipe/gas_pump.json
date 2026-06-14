@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TGT",
+    "GNG",
+    "TGT"
+  ],
+  "key": {
+    "T": "complicated_odm:gas_tank",
+    "G": "minecraft:glass_pane",
+    "N": "minecraft:diamond"
+  },
+  "result": {
+    "id": "complicated_odm:gas_pump",
+    "count": 1
+  }
+}
